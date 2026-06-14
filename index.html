@@ -3,453 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nurussunnah International Institute  | আধুনিক ও ইসলামি শিক্ষা</title>
-    <meta name="description" content="নুরুচ্ছুন্নাহ ইন্টারন্যাশনাল ইনস্টিটিউট (Nurussunnah International Institute) এর অফিশিয়াল ওয়েবসাইট। ইসলামী ও আধুনিক শিক্ষার এক অপূর্ব সমন্বয়।">
-    <meta name="keywords" content="নুরুচ্ছুন্নাহ, নুরুসসুন্নাহ মাদরাসা, Nurussunnah, Nurussunnah International Institute, নুরুচ্ছুন্নাহ মাদরাসা, নুরুসসুন্নাহ ইন্টারন্যাশনাল, Nurussunnah Vercel, নূরুচ্ছুন্নাহ, নুরুসসুন্নাহ, NSII">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap" rel="stylesheet">
+    
     <style>
-        /* স্লাইডার স্টাইল */
-        .gallery-section { padding: 60px 20px; background-color: #eef5f1; text-align: center; }
-        .section-title { color: #1b5e20; font-size: 28px; margin-bottom: 30px; }
-        .slider-container { max-width: 800px; position: relative; margin: auto; overflow: hidden; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 3px solid #fff; }
-        .slide img { width: 100%; height: 450px; object-fit: cover; display: block; }
-        .fade { animation: fadeEffect 1.5s; }
-        @keyframes fadeEffect { from {opacity: .4} to {opacity: 1} }
-
-        /* মূল ডিজাইন ও কালার থিম */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #eef5f1; color: #2d3748; line-height: 1.6; }
-        
-        header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 24px; font-weight: bold; color: #0066cc; display: flex; align-items: center; }
-        .logo img { height: 40px; margin-right: 10px; }
-        nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 600; }
-        nav a:hover { color: #0066cc; }
-        .logo-text-bottom { font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 600; color: #2d3748; text-transform: capitalize; padding-left: 2px; }
-
-        .hero { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg') no-repeat center center/cover; height: 70vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
-        .hero h1 { font-size: 40px; margin-bottom: 15px; }
-        .hero p { font-size: 18px; max-width: 600px; margin-bottom: 25px; }
-        .btn { background: #0066cc; color: #fff; padding: 12px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
-        .btn:hover { background: #004499; }
-                    
-        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 30px; color: #111; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: #fdfbfe; border-left: 4px solid #1b5e20; padding: 25px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { margin-bottom: 15px; color: #0066cc; font-size: 22px; }
-        
-        footer { background: #222; color: #fff; text-align: center; padding: 40px 20px; margin-top: 60px; }
-        footer p { margin-bottom: 10px; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 28px; }
-            header { flex-direction: column; text-align: center; }
-            nav { margin-top: 15px; }
-            nav a { margin: 0 10px; }
+        /* Color Palette (Purple & Green) */
+        :root {
+            --dark-purple: #4a148c;
+            --light-purple: #f3e5f5;
+            --mid-purple: #7b1fa2;
+            --dark-green: #1b5e20;
+            --light-green: #e8f5e9;
+            --mid-green: #388e3c;
+            --text-dark: #333;
+            --white: #ffffff;
         }
 
-        .home-chairman-section { padding: 40px 20px; text-align: center; background-color: #fdfbfe; }
-        .chairman-card { max-width: 320px; margin: 0 auto; background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eef5f1; }
-        .home-chairman-img { width: 100%; max-width: 200px; height: auto; border-radius: 50%; object-fit: cover; border: 3px solid #1b5e20; margin-bottom: 15px; }
-        .home-chairman-name { color: #1b5e20; font-size: 18px; margin: 5px 0; }
-        .home-chairman-title { font-size: 14px; color: #718096; margin: 0 0 15px 0; }
-        .message-link-btn { display: inline-block; background-color: #1b5e20; color: white; text-decoration: none; padding: 10px 20px; font-size: 14px; font-weight: bold; border-radius: 20px; transition: background 0.3s; }
-        .message-link-btn:hover { background-color: #144517; }
-
-        .hero-buttons { display: flex; flex-direction: column; gap: 15px; align-items: center; }
-        .pay-btn { background: #e2136e !important; border: none; cursor: pointer; font-size: 16px; font-family: inherit; }
-        .pay-btn:hover { background: #b80c56 !important; }
-        
-        .p-modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5); padding-top: 100px; }
-        .p-modal-content { background-color: #fff; margin: auto; padding: 0; border-radius: 12px; width: 90%; max-width: 450px; box-shadow: 0 5px 20px rgba(0,0,0,0.2); overflow: hidden; position: relative; animation: modalOpen 0.4s; }
-        @keyframes modalOpen { from {opacity: 0; transform: translateY(-30px);} to {opacity: 1; transform: translateY(0);} }
-        .p-close { position: absolute; right: 15px; top: 10px; color: #fff; font-size: 30px; font-weight: bold; cursor: pointer; z-index: 10; }
-        .p-close:hover { color: #ddd; }
-        
-        .bkash-header { background: #e2136e; color: #fff; padding: 20px; text-align: center; }
-        .bkash-logo { height: 45px; margin-bottom: 5px; }
-        .bkash-body { padding: 25px; color: #333; text-align: left; }
-        .bkash-body p { font-size: 15px; margin-bottom: 15px; line-height: 1.5; }
-        .bkash-number-box { background: #fdf0f5; border: 2px dashed #e2136e; padding: 15px; text-align: center; border-radius: 8px; margin-bottom: 20px; }
-        .bkash-number-box span { font-size: 14px; color: #666; display: block; }
-        .bkash-number-box h2 { color: #e2136e; font-size: 26px; margin-top: 5px; letter-spacing: 1px; }
-        .instruction-list p { font-size: 14px; background: #f7f9fa; padding: 10px; border-left: 3px solid #1b5e20; margin-bottom: 8px; border-radius: 0 5px 5px 0; }
-        .bkash-footer-phone { font-weight: bold; color: #1b5e20; text-align: center; margin-top: 15px; font-size: 13.5px !important; }
-
-        /* নোটিশ বোর্ড স্টাইল */
-        .notice-section { padding: 60px 20px; background-color: #fdfbfe; text-align: center; }
-        .notice-container { max-width: 900px; margin: 0 auto; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
-        .notice-main-title { font-size: 26px; color: #1a202c; font-weight: bold; letter-spacing: 1px; margin-bottom: 5px; text-align: left; padding-left: 10px; }
-        .notice-underline { width: 80px; height: 4px; background-color: #1b5e20; margin-bottom: 25px; margin-left: 10px; border-radius: 2px; }
-        .notice-list { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
-        .notice-item { display: flex; align-items: center; background: #f7f9fa; padding: 15px; border-radius: 8px; transition: all 0.3s ease; border-left: 4px solid #1b5e20; cursor: pointer; text-align: left; }
-        .notice-item:hover { background: #eef5f1; transform: translateX(5px); }
-        .notice-date-box { background: #3b82f6; color: white; padding: 10px; border-radius: 6px; min-width: 75px; text-align: center; display: flex; flex-direction: column; justify-content: center; }
-        .n-day { font-size: 16px; font-weight: bold; line-height: 1.1; }
-        .n-month { font-size: 11px; font-weight: 600; margin-top: 2px; text-transform: uppercase; }
-        .notice-content { flex: 1; padding-left: 20px; }
-        .notice-title { font-size: 16px; font-weight: 600; color: #2d3748; text-decoration: none; display: block; margin-bottom: 5px; line-height: 1.4; }
-        .notice-title:hover { color: #1b5e20; }
-        .notice-full-date { font-size: 13px; color: #718096; }
-        .notice-arrow { color: #3b82f6; font-size: 16px; padding-right: 5px; }
-        .view-all-btn { background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; border: none; padding: 12px 30px; font-size: 15px; font-weight: bold; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3); transition: background 0.3s; display: inline-flex; align-items: center; gap: 8px; }
-        .view-all-btn:hover { background: linear-gradient(135deg, #2563eb, #1d4ed8); }
-
-        .video-gallery-section { padding: 40px 20px; text-align: center; background-color: #fdfbfe; }
-        .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
-        .video-card { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; }
-        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-        .video-caption { margin-top: 10px; font-size: 15px; font-weight: 600; color: #2d3748; }
-
-        @media (max-width: 600px) {
-            .notice-item { padding: 12px; }
-            .notice-date-box { min-width: 65px; padding: 8px; }
-            .notice-content { padding-left: 12px; }
-            .notice-title { font-size: 14px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tiro Bangla', serif;
         }
-        .nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-}
 
-.nav-links li {
-    margin-left: 20px;
-}
+        body {
+            background-color: var(--light-green);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
 
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 600;
-    padding: 10px 15px;
-    display: block;
-    transition: 0.3s;
-}
+        /* Header & Navigation */
+        header {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
 
-.nav-links a:hover {
-    color: #1b5e20;
-}
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
 
-@media (max-width: 768px) {
-    nav {
-        display: flex;
-        justify-content: flex-end; /* বাটনটি ডানপাশে দেখাবে */
-        position: relative;
-        background-color: #fff;
-    }
-    
-    .menu-toggle {
-        display: block; /* মোবাইলে থ্রি-লাইন বাটনটি দৃশ্যমান হবে */
-    }
-    
-    .nav-links {
-        display: none; /* শুরুতে মেনুগুলো মোবাইলে লুকিয়ে থাকবে */
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #ffffff;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        z-index: 999;
-    }
-    
-    /* থ্রি-লাইনে ক্লিক করলে এই active ক্লাসটি চালু হবে এবং মেনু দেখাবে */
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .nav-links a {
-        padding: 15px;
-        border-bottom: 1px solid #f0f0f0;
-    }
-    
-    header { 
-        flex-direction: row !important; 
-        justify-content: space-between !important;
-        align-items: center !important;
-        padding: 10px 5% !important; 
-    }
-    .logo {
-        font-size: 18px !important;
-    }
-    .logo img {
-        height: 35px !important;
-    }
-}
+        .logo-container img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
 
-/* থ্রি-লাইন বাটনটি ডেক্সটপে বা বড় স্ক্রিনে লুকিয়ে থাকবে */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: #1b5e20;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 12px 20px;
-}
+        .logo-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
 
+        .menu-btn {
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--white);
+        }
+
+        /* Sidebar Menu */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 280px;
+            height: 100%;
+            background-color: var(--white);
+            box-shadow: 2px 0 15px rgba(0,0,0,0.3);
+            transition: 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+            border-right: 5px solid var(--mid-green);
+        }
+
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: var(--dark-purple);
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--light-purple);
+            transition: 0.2s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: var(--light-purple);
+            color: var(--dark-green);
+            padding-left: 30px;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 900;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Banner / Hero Section with banner.jpg */
+        .hero {
+            background: linear-gradient(rgba(74, 20, 140, 0.75), rgba(27, 94, 32, 0.75)), url('banner.jpg') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            box-shadow: inset 0 -5px 15px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--light-green);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-membership {
+            background-color: var(--light-purple);
+            color: var(--dark-purple);
+            border-color: var(--light-purple);
+        }
+
+        .btn-membership:hover {
+            background-color: transparent;
+            color: var(--light-purple);
+        }
+
+        .btn-donation {
+            background-color: var(--mid-green);
+            color: var(--white);
+            border-color: var(--mid-green);
+        }
+
+        .btn-donation:hover {
+            background-color: transparent;
+            color: var(--light-green);
+            border-color: var(--light-green);
+        }
+
+        /* Common Section Styling */
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--dark-purple);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--mid-green);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Chairman Section */
+        .chairman-section {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            padding: 30px;
+            border-left: 5px solid var(--mid-purple);
+        }
+
+        .chairman-img {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .chairman-img img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid var(--light-green);
+            object-fit: cover;
+        }
+
+        .chairman-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .chairman-text h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+
+        /* Galleries */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-bottom: 4px solid var(--light-purple);
+        }
+
+        .gallery-item img, .gallery-item iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info i {
+            color: var(--light-green);
+            margin-right: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo"> 
-            <span>Nurussunnah International Institute</span>
+        <div class="logo-container">
+            <img src="logo.png" alt="আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ লোগো">
+            <div class="logo-title">আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</div>
         </div>
-<nav>
-    <!-- ☰ নতুন থ্রি-লাইন মোবাইল বাটন -->
-    <button class="menu-toggle" id="mobile-menu-btn">
-        <i class="fa-solid fa-bars"></i>
-    </button>
-    
-    <!-- ul ট্যাগটিতে id="nav-links" যুক্ত করা হয়েছে -->
-    <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">হোম</a></li>
-        <li><a href="porichiti.html">পরিচিতি</a></li>
-        <li><a href="safollo.html">আমাদের সাফল্য</a></li>
-        <li><a href="academic.html">একাডেমিক</a></li>
-        <li><a href="abasik.html">আবাসিক</a></li>
-        <li><a href="folafol.html">ফলাফল</a></li>
-        <li><a href="library.html">লাইব্রেরি</a></li>
-    </ul>
-</nav>
+        <div class="menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>ইসলামি ও আধুনিক শিক্ষার সমন্বয়ে</h1>
-        <p>আমরা শিক্ষার্থীদের দক্ষ, নৈতিক ও ভবিষ্যৎমুখী নাগরিক হিসেবে গড়ে তুলতে প্রতিশ্রুতিবদ্ধ।</p>
-        <div class="hero-buttons">
-            <a href="https://forms.gle/iWEt4tNkn4sT62zz7" target="_blank" class="btn">Admission</a>
-            <button onclick="openPaymentModal()" class="btn pay-btn">Online Payment</button>
-        </div>
-    </section>
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> হোম</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> পরিচিতি</a></li>
+            <li><a href="manpower.html"><i class="fas fa-users"></i> জনশক্তি</a></li>
+            <li><a href="activities.html"><i class="fas fa-tasks"></i> কার্যক্রম</a></li>
+            <li><a href="research.html"><i class="fas fa-book-open"></i> গবেষণা ও প্রকাশনা</a></li>
+            <li><a href="branches.html"><i class="fas fa-building"></i> শাখা প্রতিষ্ঠান</a></li>
+        </ul>
+    </nav>
 
-    <div id="paymentModal" class="p-modal">
-        <div class="p-modal-content">
-            <span class="p-close" onclick="closePaymentModal()">&times;</span>
-            <div class="bkash-header">
-                <img src="https://raw.githubusercontent.com/w3programmers/bKash-wpp/master/bKash%20logo.png" alt="bKash" class="bkash-logo">
-                <h3>বিকাশ পেমেন্ট ইন্সট্রাকশন</h3>
-            </div>
-            <div class="bkash-body">
-                <p>ভর্তি ফি বা অন্যান্য খরচাদি নিচে দেওয়া বিকাশ পার্সোনাল নাম্বারে <strong>"Send Money"</strong> (সেন্ড মানি) করুন:</p>
-                <div class="bkash-number-box">
-                    <span>বিকাশ নাম্বার (Personal):</span>
-                    <h2>০১৭৪১৭৮৭১০২</h2>
-                </div>
-                <div class="instruction-list">
-                    <p>১. আপনার বিকাশ অ্যাপ বা *২৪৭# ডায়াল করে ওপরের নাম্বারে নির্দিষ্ট টাকা সেন্ড মানি করুন।</p>
-                    <p>২. পেমেন্ট সফল হওয়ার পর অবশ্যই <strong>Transaction ID (TrxID)</strong> এবং শিক্ষার্থীর নাম লিখে আমাদের নিচের নাম্বারে কল অথবা এসএমএস করে কনফার্ম করুন।</p>
-                </div>
-                <p class="bkash-footer-phone">📞 যেকোনো প্রয়োজনে যোগাযোগ: ০১৭৪১৭৮৭১০২, ০১৬০৯৫৫১৩৮৪</p>
-            </div>
+    <div class="hero">
+        <h1>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</h1>
+        <p>মানবতার কল্যাণে ও দীনের দাওয়াতে নিবেদিত একটি নিঃস্বার্থ কাফেলা</p>
+        
+        <div class="hero-buttons">
+            <a href="https://docs.google.com/forms/your-form-link" target="_blank" class="btn btn-membership">
+                <i class="fas fa-user-plus"></i> মেম্বারশিপ
+            </a>
+            <a href="bkash-payment-link.html" class="btn btn-donation">
+                <i class="fas fa-hand-holding-heart"></i> ডোনেশন (বিকাশ)
+            </a>
         </div>
     </div>
 
-    <section class="home-chairman-section">
-        <div class="chairman-card">
-            <img src="chairman.jpg" alt="Mufti Md. Sanaullah Hanafi" class="home-chairman-img">
-            <h3 class="home-chairman-name">Mufti Md. Sanaullah Hanafi</h3>
-            <p class="home-chairman-title">Chairman</p>
-            <a href="chairman-message.html" target="_blank" class="message-link-btn">Message from the Chairman</a>
-        </div>
-    </section>
-
-    <section class="notice-section" id="notices">
-        <div class="notice-container">
-            <h2 class="notice-main-title">NOTICE BOARD</h2>
-            <div class="notice-underline"></div>
-            
-            <div class="notice-list" id="sheets-notice-list">
-                <p style="text-align:center; color:#718096; font-size:15px;">নোটিশ লোড হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন...</p>
+    <section id="chairman">
+        <h2 class="section-title">চেয়ারম্যানের বাণী</h2>
+        <div class="chairman-section">
+            <div class="chairman-img">
+                <img src="https://via.placeholder.com/200/4a148c/ffffff?text=Chairman+Photo" alt="চেয়ারম্যানের ছবি">
             </div>
-            
-            <button class="view-all-btn">
-                <span class="btn-icon">📋</span> View All Notices
-            </button>
-        </div>
-    </section>
-
-    <section class="container" id="departments" style="background: #eef2f5;">
-        <h2 class="section-title">প্রধান বিভাগসমূহ</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>সাধারণ শিক্ষা ও বিজ্ঞান</h3>
-                <p>জাতীয় শিক্ষাক্রমের (NCTB) আলোকে আধুনিক বিজ্ঞান, গণিত ও প্রযুক্তি শিক্ষা।</p>
-            </div>
-            <div class="card">
-                <h3>তাহফীযুল কুরআন</h3>
-                <p>শুদ্ধ উচ্চারণ ও তাজবীদসহ সম্পূর্ণ কুরআন হিফজ এবং ইসলামি শিক্ষা বিভাগ।</p>
-            </div>
-            <div class="card">
-                <h3>ভাষা শিক্ষা</h3>
-                <p>বাংলা, ইংরেজি এবং আরবি ভাষায় অনর্গল কথা বলা ও লেখার বিশেষ কোর্স।</p>
+            <div class="chairman-text">
+                <h3>মুহতারাম চেয়ারম্যান</h3>
+                <p>নাহমাদুহু ওয়া নুসাল্লি আলা রাসূলিহিল কারীম। <br><br>
+                আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ একটি অরাজনৈতিক, দীনি ও সেবামূলক কাফেলা। আমাদের একমাত্র লক্ষ্য হলো কুরআন ও সুন্নাহর সঠিক জ্ঞান মানুষের দোরগোড়ায় পৌঁছে দেওয়া। সমাজের সর্বস্তরের মানুষকে আল্লাহ ও তাঁর রাসূল (সা.) এর প্রদর্শিত পথে নিঃস্বার্থভাবে ডাকার জন্য আমাদের এই ক্ষুদ্র প্রয়াস। আসুন, আমরা সকলে মিলে একটি সুন্দর ও আদর্শ ইসলামী সমাজ বিনির্মাণে কাজ করি। মহান আল্লাহ আমাদের এই প্রচেষ্টাকে কবুল করুন। আমিন।</p>
             </div>
         </div>
     </section>
 
-    <section class="container" id="skills">
-        <h2 class="section-title">আইটি ও প্রফেশনাল স্কিলস</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>কনটেন্ট ক্রিয়েশন ও এডিটিং</h3>
-                <p>ভিডিও এডিটিং, মোশন গ্রাফিক্স, সিনেমাটোগ্রাফি এবং সাউন্ড ডিজাইন।</p>
+    <section id="photo-gallery">
+        <h2 class="section-title">ফটো গ্যালারী</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300/1b5e20/ffffff?text=Dawah+Program+1" alt="প্রোগ্রাম ১">
             </div>
-            <div class="card">
-                <h3>এআই ও রোবোটিক্স</h3>
-                <p>আর্টিফিশিয়াল ইন্টেলিজেন্স (AI) এর সঠিক ব্যবহার এবং বেসিক রোবোটিক্স ও কোডিং।</p>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300/4a148c/ffffff?text=Dawah+Program+2" alt="প্রোগ্রাম ২">
             </div>
-            <div class="card">
-                <h3>লাইফ স্কিলস</h3>
-                <p>টাইম ম্যানেজমেন্ট, পাবলিক স্পিকিং, লিডারশিপ এবং সেলফ-ডিফেন্স ট্রেইনিং।</p>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x300/388e3c/ffffff?text=Dawah+Program+3" alt="প্রোগ্রাম ৩">
             </div>
         </div>
     </section>
 
-    <section class="gallery-section">
-        <h2 class="section-title">ফটো গ্যালারি</h2>
-        <div class="slider-container">
-            <div class="slide fade"><img src="slider1.jpg" alt="Gallery Image 1"></div>
-            <div class="slide fade"><img src="slider2.jpg" alt="Gallery Image 2"></div>
-            <div class="slide fade"><img src="slider3.jpg" alt="Gallery Image 3"></div>
-            <div class="slide fade"><img src="slider4.jpg" alt="Gallery Image 4"></div>
-            <div class="slide fade"><img src="slider5.jpg" alt="Gallery Image 5"></div>
-            <div class="slide fade"><img src="slider6.jpg" alt="Gallery Image 6"></div>
-        </div>
-    </section>
-
-    <section class="video-gallery-section">
-        <h2 class="gallery-title">ভিডিও গ্যালারি</h2>
-        <div class="video-grid">
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/XOhVZEtjuoY?si=sHVWsR1s46JHXOgr" loading="lazy" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p class="video-caption">পরীক্ষার্থী বন্ধুদের জন্য</p>
+    <section id="video-gallery">
+        <h2 class="section-title">ভিডিও গ্যালারি</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video 1" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/9TXPyRmHKGQ?si=KpAqYAQxjL1C1IQn" loading="lazy" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p class="video-caption">জিকির</p>
+            <div class="gallery-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video 2" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="video-card">
-                <div class="video-wrapper">
-                    <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/facebook/videos/10153231379940445/&show_text=0" loading="lazy" frameborder="0" allowfullscreen></iframe>
-                </div>
-                <p class="video-caption">विशेष সেমিনার ও বক্তব্য</p>
+            <div class="gallery-item">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video 3" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <section class="container" id="about">
-        <h2 class="section-title">আমাদের সম্পর্কে</h2>
-        <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 18px;">
-            আমাদের প্রতিষ্ঠানটি মূলত ইসলামি মূল্যবোধ এবং আধুনিক বিজ্ঞান ও প্রযুক্তির সমন্বয়ে একটি দক্ষতা-ভিত্তিক (Skills-based) শিক্ষাক্রম পরিচালনা করে। শিক্ষার্থীদের তাত্ত্বিক শিক্ষার পাশাপাশি প্রফেশনাল ও জীবনমুখী করে তোলাই আমাদের মূল লক্ষ্য।
-        </p>
+    <section id="contact">
+        <h2 class="section-title">যোগাযোগ</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>প্রধান কার্যালয়:</strong> ঢাকা, বাংলাদেশ</p>
+                <p><i class="fas fa-phone-alt"></i> <strong>ফোন:</strong> +৮৮০ ১XXX-XXXXXX</p>
+                <p><i class="fas fa-envelope"></i> <strong>ইমেইল:</strong> contact@anjumanewaezin.org</p>
+            </div>
+        </div>
     </section>
-    
-    <footer id="contact">
-        <h2 style="margin-bottom: 20px;">যোগাযোগ করুন</h2>
-        <p>📍 ঠিকানা: বক্সনগর, সারুলিয়া, ডেমরা, ঢাকা</p>
-        <p>📞 ফোন: ০১৭৪১৭৮৭১০২, ০১৬০৯৫৫১৩৮৪</p>
-        <p>&copy; 2026 Nurussunnah International Institute। সর্বস্বত্ব সংরক্ষিত।</p>
+
+    <footer>
+        <p>&copy; ২০২৬ আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
     <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            // জাভাস্ক্রিপ্ট এর 'let i' দিয়ে লুপ স্কোপ ফিক্স করা হয়েছে যেন মেমোরি ক্র্যাশ না হয়
-            let slides = document.getElementsByClassName("slide");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            if (slides[slideIndex-1]) {
-                slides[slideIndex-1].style.display = "block";  
-            }
-            setTimeout(showSlides, 3000); 
-        }
-
-        function openPaymentModal() { document.getElementById("paymentModal").style.display = "block"; }
-        function closePaymentModal() { document.getElementById("paymentModal").style.display = "none"; }
-        window.onclick = function(event) {
-            let modal = document.getElementById("paymentModal");
-            if (event.target == modal) { modal.style.display = "none"; }
-        }
-
-        // গুগল শিট নোটিশ বোর্ড কানেকশন
-        const googleSheetWebAppUrl = 'https://script.google.com/macros/s/AKfycbyUzVWWW21jN3PgeH-f6sVJ8-VjWWJWwLxaI7xj7H7UIflZ3DoEk2306og2Cm5RHtwT/exec';
-
-        async function fetchNotices() {
-            const noticeListContainer = document.getElementById('sheets-notice-list');
-            try {
-                const response = await fetch(googleSheetWebAppUrl);
-                const data = await response.json();
-                noticeListContainer.innerHTML = ''; 
-
-                if(!data || data.length === 0) {
-                    noticeListContainer.innerHTML = '<p style="text-align:center; color:#718096; font-size:15px;">আপাতত কোনো নোটিশ নেই।</p>';
-                    return;
-                }
-
-                data.forEach(item => {
-                    const noticeHtml = `
-                        <div class="notice-item" onclick="if('${item.Link}' !== '#' && '${item.Link}' !== '') window.open('${item.Link}', '_blank')">
-                            <div class="notice-date-box">
-                                <span class="n-day">${item.Day || ''}</span>
-                                <span class="n-month">${item.Month || ''}</span>
-                            </div>
-                            <div class="notice-content">
-                                <a href="${item.Link || '#'}" target="_blank" class="notice-title">${item.Title || 'শিরোনামহীন নোটিশ'}</a>
-                                <span class="notice-full-date">${item.FullDate || ''}</span>
-                            </div>
-                            <div class="notice-arrow">❯</div>
-                        </div>
-                    `;
-                    noticeListContainer.insertAdjacentHTML('beforeend', noticeHtml);
-                });
-            } catch (error) {
-                console.error('Error fetching notices:', error);
-                noticeListContainer.innerHTML = '<p style="text-align:center; color:red; font-size:15px;">নোটিশ লোড করতে সমস্যা হয়েছে।</p>';
-            }
-        }
-        
-        // ডম কন্টেন্ট লোড ইভেন্ট ফিক্সড
-        window.addEventListener('DOMContentLoaded', fetchNotices);
-    </script>
-        
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const navLinks = document.getElementById('nav-links');
-
-        menuBtn.addEventListener('click', () => {
-            // মেনু শো/হাইড টগল করবে
-            navLinks.classList.toggle('active');
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
             
-            // ক্লিক করলে থ্রি-লাইন আইকনটি বদলে ক্রস (X) চিহ্ন হবে
-            const icon = menuBtn.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.replace('fa-bars', 'fa-xmark');
-            } else {
-                icon.classList.replace('fa-xmark', 'fa-bars');
-            }
-        });
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
     </script>
 </body>
 </html>
