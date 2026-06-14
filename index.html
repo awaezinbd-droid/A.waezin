@@ -4,84 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</title>
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Bengali -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind_Siliguri:wght@400;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
     
     <style>
-        /* Color Palette (Purple & Green) */
+        /* Color Palette - Premium Purple & Green */
         :root {
-            --dark-purple: #4a148c;
-            --light-purple: #f3e5f5;
-            --mid-purple: #7b1fa2;
-            --dark-green: #1b5e20;
-            --light-green: #e8f5e9;
-            --mid-green: #388e3c;
-            --text-dark: #333;
+            --dark-purple: #3b0066;
+            --mid-purple: #6a0dad;
+            --light-purple: #f4ecf7;
+            --dark-green: #0f4c1d;
+            --mid-green: #1e7e34;
+            --light-green: #ebf7ee;
+            --accent-gold: #ffd700;
+            --text-dark: #2d2d2d;
             --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tiro Bangla', serif;
+            font-family: 'Hind Siliguri', 'Tiro Bangla', serif;
         }
 
         body {
             background-color: var(--light-green);
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         /* Header & Navigation */
         header {
-            background-color: var(--dark-purple);
+            background: linear-gradient(135deg, var(--dark-purple), var(--mid-purple));
             color: var(--white);
-            padding: 10px 20px;
+            padding: 12px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
         .logo-container img {
-            height: 45px;
+            height: 55px;
             width: auto;
             object-fit: contain;
+            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
         }
 
         .logo-title {
-            font-size: 1.4rem;
-            font-weight: bold;
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
         }
 
         .menu-btn {
             font-size: 1.8rem;
             cursor: pointer;
             color: var(--white);
+            transition: var(--transition);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .menu-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--accent-gold);
         }
 
         /* Sidebar Menu */
         .sidebar {
             position: fixed;
             top: 0;
-            left: -300px;
-            width: 280px;
+            left: -320px;
+            width: 300px;
             height: 100%;
             background-color: var(--white);
-            box-shadow: 2px 0 15px rgba(0,0,0,0.3);
-            transition: 0.3s ease;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+            transition: var(--transition);
             z-index: 1000;
-            padding-top: 60px;
+            padding-top: 40px;
             border-right: 5px solid var(--mid-green);
         }
 
@@ -89,23 +104,41 @@
             left: 0;
         }
 
+        .sidebar-header {
+            padding: 0 25px 20px 25px;
+            border-bottom: 2px solid var(--light-purple);
+            margin-bottom: 15px;
+            color: var(--dark-purple);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
         .sidebar ul {
             list-style: none;
         }
 
         .sidebar ul li a {
-            display: block;
-            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 14px 25px;
             text-decoration: none;
-            color: var(--dark-purple);
-            font-size: 1.2rem;
-            border-bottom: 1px solid var(--light-purple);
-            transition: 0.2s;
+            color: var(--text-dark);
+            font-size: 1.15rem;
+            font-weight: 600;
+            border-left: 4px solid transparent;
+            transition: var(--transition);
+        }
+
+        .sidebar ul li a i {
+            color: var(--mid-purple);
+            width: 20px;
         }
 
         .sidebar ul li a:hover {
             background-color: var(--light-purple);
-            color: var(--dark-green);
+            color: var(--mid-purple);
+            border-left: 4px solid var(--mid-purple);
             padding-left: 30px;
         }
 
@@ -116,7 +149,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
             display: none;
             z-index: 900;
         }
@@ -125,71 +159,78 @@
             display: block;
         }
 
-        /* Banner / Hero Section with banner.jpg */
+        /* Hero / Banner Section */
         .hero {
-            background: linear-gradient(rgba(74, 20, 140, 0.75), rgba(27, 94, 32, 0.75)), url('banner.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(59, 0, 102, 0.8), rgba(15, 76, 29, 0.8)), url('banner.jpg') no-repeat center center/cover;
             color: var(--white);
             text-align: center;
-            padding: 100px 20px;
-            box-shadow: inset 0 -5px 15px rgba(0,0,0,0.3);
+            padding: 140px 20px;
+            box-shadow: inset 0 -10px 20px rgba(0,0,0,0.3);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0px 4px 10px rgba(0,0,0,0.7);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            color: var(--light-green);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--accent-gold);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0px 2px 5px rgba(0,0,0,0.6);
         }
 
         .hero-buttons {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 25px;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 12px 30px;
-            border-radius: 30px;
+            padding: 14px 35px;
+            border-radius: 50px;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: 0.3s;
-            border: 2px solid transparent;
+            font-size: 1.25rem;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .btn-membership {
-            background-color: var(--light-purple);
+            background-color: var(--white);
             color: var(--dark-purple);
-            border-color: var(--light-purple);
         }
 
         .btn-membership:hover {
-            background-color: transparent;
-            color: var(--light-purple);
+            background-color: var(--accent-gold);
+            color: var(--dark-purple);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,215,0,0.4);
         }
 
         .btn-donation {
-            background-color: var(--mid-green);
+            background-color: #d63031; /* Standout color for donation/bKash feeling */
             color: var(--white);
-            border-color: var(--mid-green);
         }
 
         .btn-donation:hover {
-            background-color: transparent;
-            color: var(--light-green);
-            border-color: var(--light-green);
+            background-color: #ff7675;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(214,48,49,0.4);
         }
 
-        /* Common Section Styling */
+        /* Global Sections */
         section {
-            padding: 50px 20px;
+            padding: 70px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -197,32 +238,32 @@
         .section-title {
             text-align: center;
             color: var(--dark-purple);
-            font-size: 2rem;
-            margin-bottom: 30px;
-            position: relative;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 45px;
         }
         
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--mid-green);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(to right, var(--mid-purple), var(--mid-green));
+            margin: 12px auto 0;
+            border-radius: 10px;
         }
 
-        /* Chairman Section */
+        /* Chairman Message Style */
         .chairman-section {
             background-color: var(--white);
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            gap: 30px;
-            padding: 30px;
-            border-left: 5px solid var(--mid-purple);
+            gap: 40px;
+            padding: 40px;
+            border-top: 5px solid var(--mid-purple);
         }
 
         .chairman-img {
@@ -232,11 +273,12 @@
         }
 
         .chairman-img img {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
-            border: 5px solid var(--light-green);
+            border: 6px solid var(--light-purple);
             object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .chairman-text {
@@ -245,63 +287,105 @@
         }
 
         .chairman-text h3 {
-            color: var(--dark-green);
-            margin-bottom: 10px;
+            color: var(--dark-purple);
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
-        /* Galleries */
+        /* Gallery Grids */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .gallery-item {
             background: var(--white);
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            transition: var(--transition);
             border-bottom: 4px solid var(--light-purple);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            border-bottom-color: var(--mid-green);
         }
 
         .gallery-item img, .gallery-item iframe {
             width: 100%;
-            height: 200px;
-            border-radius: 5px;
+            height: 220px;
+            border-radius: 8px;
             object-fit: cover;
         }
 
         /* Contact Section */
         .contact-container {
-            background-color: var(--dark-purple);
+            background: linear-gradient(135deg, var(--dark-purple), #250046);
             color: var(--white);
-            padding: 40px;
-            border-radius: 10px;
+            padding: 50px 30px;
+            border-radius: 15px;
             text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
-        .contact-info p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
         }
-        
-        .contact-info i {
-            color: var(--light-green);
-            margin-right: 10px;
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px 30px;
+            border-radius: 10px;
+            min-width: 250px;
+            flex: 1;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .contact-card p {
+            font-size: 1.1rem;
         }
 
         /* Footer */
         footer {
-            background-color: #222;
-            color: var(--white);
+            background-color: #151515;
+            color: #b5b5b5;
             text-align: center;
-            padding: 20px;
-            margin-top: 20px;
+            padding: 25px;
+            font-size: 1rem;
+            border-top: 3px solid var(--mid-green);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .hero p { font-size: 1.2rem; }
+            .logo-title { font-size: 1.2rem; }
+            .logo-container img { height: 45px; }
+            section { padding: 50px 20px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ লোগো">
@@ -312,8 +396,10 @@
         </div>
     </header>
 
+    <!-- Sidebar Menu -->
     <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
     <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">প্রধান মেনু</div>
         <ul>
             <li><a href="index.html"><i class="fas fa-home"></i> হোম</a></li>
             <li><a href="about.html"><i class="fas fa-info-circle"></i> পরিচিতি</a></li>
@@ -324,25 +410,29 @@
         </ul>
     </nav>
 
+    <!-- Banner / Hero Section -->
     <div class="hero">
         <h1>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</h1>
         <p>মানবতার কল্যাণে ও দীনের দাওয়াতে নিবেদিত একটি নিঃস্বার্থ কাফেলা</p>
         
         <div class="hero-buttons">
+            <!-- Google Form Link -->
             <a href="https://docs.google.com/forms/your-form-link" target="_blank" class="btn btn-membership">
-                <i class="fas fa-user-plus"></i> মেম্বারশিপ
+                <i class="fas fa-user-plus"></i> মেম্বারশিপ ফর্ম
             </a>
+            <!-- bKash / Payment Link -->
             <a href="bkash-payment-link.html" class="btn btn-donation">
-                <i class="fas fa-hand-holding-heart"></i> ডোনেশন (বিকাশ)
+                <i class="fas fa-heart"></i> ডোনেশন (বিকাশ)
             </a>
         </div>
     </div>
 
+    <!-- Chairman's Message -->
     <section id="chairman">
         <h2 class="section-title">চেয়ারম্যানের বাণী</h2>
         <div class="chairman-section">
             <div class="chairman-img">
-                <img src="https://via.placeholder.com/200/4a148c/ffffff?text=Chairman+Photo" alt="চেয়ারম্যানের ছবি">
+                <img src="https://via.placeholder.com/220/4a148c/ffffff?text=Chairman+Photo" alt="চেয়ারম্যানের ছবি">
             </div>
             <div class="chairman-text">
                 <h3>মুহতারাম চেয়ারম্যান</h3>
@@ -352,6 +442,7 @@
         </div>
     </section>
 
+    <!-- Photo Gallery -->
     <section id="photo-gallery">
         <h2 class="section-title">ফটো গ্যালারী</h2>
         <div class="gallery-grid">
@@ -367,6 +458,7 @@
         </div>
     </section>
 
+    <!-- Video Gallery -->
     <section id="video-gallery">
         <h2 class="section-title">ভিডিও গ্যালারি</h2>
         <div class="gallery-grid">
@@ -382,21 +474,33 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">যোগাযোগ</h2>
+        <h2 class="section-title">যোগাযোগ করুন</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> <strong>প্রধান কার্যালয়:</strong> ঢাকা, বাংলাদেশ</p>
-                <p><i class="fas fa-phone-alt"></i> <strong>ফোন:</strong> +৮৮০ ১XXX-XXXXXX</p>
-                <p><i class="fas fa-envelope"></i> <strong>ইমেইল:</strong> contact@anjumanewaezin.org</p>
+                <div class="contact-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><strong>প্রধান কার্যালয়</strong><br>ঢাকা, বাংলাদেশ</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <p><strong>হটলাইন</strong><br>+৮৮০ ১XXX-XXXXXX</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <p><strong>ইমেইল</strong><br>info@anjumanewaezin.org</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>&copy; ২০২৬ আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ। সর্বস্বত্ব সংরক্ষিত।</p>
     </footer>
 
+    <!-- JavaScript for Mobile Menu -->
     <script>
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar');
