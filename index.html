@@ -218,7 +218,7 @@
         }
 
         .btn-donation {
-            background-color: #d63031; /* Standout color for donation/bKash feeling */
+            background-color: #d63031;
             color: var(--white);
         }
 
@@ -253,7 +253,7 @@
             border-radius: 10px;
         }
 
-        /* Chairman Message Style */
+        /* Chairman Section Style */
         .chairman-section {
             background-color: var(--white);
             border-radius: 15px;
@@ -288,9 +288,30 @@
 
         .chairman-text h3 {
             color: var(--dark-purple);
-            font-size: 1.6rem;
-            margin-bottom: 12px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
             font-weight: 700;
+        }
+
+        .btn-read-more {
+            background-color: var(--mid-purple);
+            color: var(--white);
+            padding: 10px 25px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+        }
+
+        .btn-read-more:hover {
+            background-color: var(--dark-purple);
+            transform: translateX(5px);
+            box-shadow: 0 6px 15px rgba(106, 13, 173, 0.3);
         }
 
         /* Gallery Grids */
@@ -418,26 +439,28 @@
         <div class="hero-buttons">
             <!-- Google Form Link -->
             <a href="https://docs.google.com/forms/your-form-link" target="_blank" class="btn btn-membership">
-                <i class="fas fa-user-plus"></i> মেম্বারশিপ ফর্ম
+                <i class="fas fa-user-plus"></i> মেম্বারশিপ
             </a>
             <!-- bKash / Payment Link -->
             <a href="bkash-payment-link.html" class="btn btn-donation">
-                <i class="fas fa-heart"></i> ডোনেশন (বিকাশ)
+                <i class="fas fa-heart"></i> ডোনেশন
             </a>
         </div>
     </div>
 
-    <!-- Chairman's Message -->
+    <!-- Chairman's Message Section -->
     <section id="chairman">
         <h2 class="section-title">চেয়ারম্যানের বাণী</h2>
         <div class="chairman-section">
             <div class="chairman-img">
-                <img src="https://via.placeholder.com/220/4a148c/ffffff?text=Chairman+Photo" alt="চেয়ারম্যানের ছবি">
+                <img src="chairman.jpg" alt="মুহতারাম চেয়ারম্যানের ছবি">
             </div>
             <div class="chairman-text">
-                <h3>মুহতারাম চেয়ারম্যান</h3>
-                <p>নাহমাদুহু ওয়া নুসাল্লি আলা রাসূলিহিল কারীম। <br><br>
-                আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ একটি অরাজনৈতিক, দীনি ও সেবামূলক কাফেলা। আমাদের একমাত্র লক্ষ্য হলো কুরআন ও সুন্নাহর সঠিক জ্ঞান মানুষের দোরগোড়ায় পৌঁছে দেওয়া। সমাজের সর্বস্তরের মানুষকে আল্লাহ ও তাঁর রাসূল (সা.) এর প্রদর্শিত পথে নিঃস্বার্থভাবে ডাকার জন্য আমাদের এই ক্ষুদ্র প্রয়াস। আসুন, আমরা সকলে মিলে একটি সুন্দর ও আদর্শ ইসলামী সমাজ বিনির্মাণে কাজ করি। মহান আল্লাহ আমাদের এই প্রচেষ্টাকে কবুল করুন। আমিন।</p>
+                <h3>চেয়ারম্যানের বাণী</h3>
+                <!-- Button to open the message in a new page -->
+                <a href="chairman-message.html" class="btn-read-more">
+                    সম্পূর্ণ বাণীটি পড়ুন <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
         </div>
     </section>
@@ -447,13 +470,13 @@
         <h2 class="section-title">ফটো গ্যালারী</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300/1b5e20/ffffff?text=Dawah+Program+1" alt="প্রোগ্রাম ১">
+                <img src="gallery1.jpg" alt="দাওয়াতী প্রোগ্রাম ১">
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300/4a148c/ffffff?text=Dawah+Program+2" alt="প্রোগ্রাম ২">
+                <img src="gallery2.jpg" alt="দাওয়াতী প্রোগ্রাম ২">
             </div>
             <div class="gallery-item">
-                <img src="https://via.placeholder.com/400x300/388e3c/ffffff?text=Dawah+Program+3" alt="প্রোগ্রাম ৩">
+                <img src="gallery3.jpg" alt="দাওয়াতী প্রোগ্রাম ৩">
             </div>
         </div>
     </section>
@@ -463,13 +486,13 @@
         <h2 class="section-title">ভিডিও গ্যালারি</h2>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video 1" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/bJveDyIXxac?si=nSm44WW7n8a4tTjv" title="YouTube video 1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="gallery-item">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video 2" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/1z4EC2_D0Mg?si=Ku3cbNCEQOOcPMTk" title="YouTube video 2" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="gallery-item">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video 3" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/BfxCvoT-Y5k?si=ehpacljVQSk5DRJt" title="YouTube video 3" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -481,15 +504,15 @@
             <div class="contact-info">
                 <div class="contact-card">
                     <i class="fas fa-map-marker-alt"></i>
-                    <p><strong>প্রধান কার্যালয়</strong><br>ঢাকা, বাংলাদেশ</p>
+                    <p><strong>প্রধান কার্যালয়</strong><br>তাখসীসি মূল ভবন, বক্কবক্সনগর, সারুলিয়া, ডেমরা, ঢাকা, বাংলাদেশ</p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-phone-alt"></i>
-                    <p><strong>হটলাইন</strong><br>+৮৮০ ১XXX-XXXXXX</p>
+                    <p><strong>হটলাইন</strong><br>+8801741787102</p>
                 </div>
                 <div class="contact-card">
                     <i class="fas fa-envelope"></i>
-                    <p><strong>ইমেইল</strong><br>info@anjumanewaezin.org</p>
+                    <p><strong>ইমেইল</strong><br>a.waezin.bd@gmail.com</p>
                 </div>
             </div>
         </div>
