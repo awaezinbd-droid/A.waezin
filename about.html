@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পরিচিতি - আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind_Siliguri:wght@400;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-purple: #3b0066;
+            --mid-purple: #6a0dad;
+            --light-purple: #f4ecf7;
+            --dark-green: #0f4c1d;
+            --mid-green: #1e7e34;
+            --light-green: #ebf7ee;
+            --accent-gold: #ffd700;
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Tiro Bangla', serif;
+        }
+
+        body {
+            background-color: var(--light-green);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 40px 5%;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--mid-purple);
+        }
+
+        h1 {
+            color: var(--dark-purple);
+            text-align: center;
+            margin-bottom: 35px;
+            font-size: 2.6rem;
+            font-weight: 700;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--mid-purple), var(--mid-green));
+            margin: 10px auto 0;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: var(--dark-green);
+            margin-top: 35px;
+            margin-bottom: 20px;
+            font-size: 1.7rem;
+            border-bottom: 2px solid var(--light-purple);
+            padding-bottom: 8px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.15rem;
+        }
+
+        .highlight-box {
+            background-color: var(--light-purple);
+            border-left: 5px solid var(--mid-purple);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 25px 0;
+            font-style: italic;
+        }
+
+        /* Pillars Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .pillar-card {
+            background: var(--light-green);
+            padding: 20px;
+            border-radius: 10px;
+            border-bottom: 4px solid var(--mid-green);
+            transition: var(--transition);
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .pillar-card h3 {
+            color: var(--dark-purple);
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pillar-card h3 i {
+            color: var(--mid-purple);
+        }
+
+        .pillar-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: var(--mid-purple);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+        }
+
+        .back-btn:hover {
+            background: var(--dark-purple);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .about-container { padding: 25px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="about-container">
+        <h1>আমাদের পরিচিতি</h1>
+        <p><strong>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</strong> একটি সম্পূর্ণ অরাজনৈতিক, ধর্মীয়, গবেষণা ও সমাজসেবামূলক দাওয়াতী কাফেলা। মহান আল্লাহর সন্তুষ্টি অর্জন এবং রাসুলুল্লাহ (ﷺ)-এর সুন্নাহর আলোকে মানবজাতিকে সঠিক পথ প্রদর্শনের মহান লক্ষ্য নিয়ে এই সংগঠনের পথচলা।</p>
+        
+        <p>ইসলামি সমাজে আলেমদের মর্যাদা সর্বোচ্চ। তবে আঞ্জুমান বিশ্বাস করে, কেবল কিতাব পাঠ ও পাঠদানের গণ্ডি পেরিয়ে যিনি জ্ঞান, আমল, আধ্যাত্মিকতা ও সমাজসেবাকে একত্রে ধারণ করেন—তিনিই প্রকৃত <strong>'আলেমে রব্বানী'</strong> বা <strong>'নায়েবে রাসূল'</strong>। মাওলানা শাহ ওলিউল্লাহ দেহলবি (রহঃ)-এর বিখ্যাত গ্রন্থ <em>'কওলোল-জমিল'</em>, এর ব্যাখ্যাগ্রন্থ <em>'শেফায়োল আলিল'</em> এবং <em>'ওয়াজ শিক্ষা (প্রথম ভাগ)'</em>-এর মূল দর্শনকে ভিত্তি ধরে ওয়াজ ও নছিহতের সঠিক পদ্ধতি নির্ধারণ এবং সমাজ সংস্কারে কাজ করে যাচ্ছে আঞ্জুমান।</p>
+
+        <div class="highlight-box">
+            "যিনি নবী ও রাসূলগণের প্রকৃত উত্তরাধিকারী (ওয়ারেছ), জগতে সমস্ত জীব যার কল্যাণের জন্য দোয়া করে—সমাজ ও রাষ্ট্রে সেই আলেমে রব্বানীর আদর্শ ও মর্যাদা প্রতিষ্ঠা করাই আমাদের মূল লক্ষ্য।"
+        </div>
+
+        <h2>আঞ্জুমানের ৫টি মূল স্তম্ভ (আমাদের আদর্শ)</h2>
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <h3><i class="fas fa-book-open"></i> দ্বীনি এলম শিক্ষাদান</h3>
+                <p>তাফসির, হাদিস, ফিকহ, আকাইদ ও সলুকের ব্যাপক প্রসার ঘটানো। কোরআন ও সুন্নাহর গভীর জ্ঞানকে দাওয়াহর মূল ভিত্তি হিসেবে প্রতিষ্ঠা করা।</p>
+            </div>
+            <div class="pillar-card">
+                <h3><i class="fas fa-heart"></i> আত্মশুদ্ধি ও এলে বাতিনী</h3>
+                <p>মানুষের অন্তরের পরিশুদ্ধি ও আধ্যাত্মিক প্রশিক্ষণের ব্যবস্থা করা, যা সরাসরি নবী কারীম (ﷺ)-এর পবিত্র জিম্মাদারীর অন্তর্ভুক্ত।</p>
+            </div>
+            <div class="pillar-card">
+                <h3><i class="fas fa-bullhorn"></i> সহিহ ওয়াজ-নছিহত</h3>
+                <p>ভিত্তিহীন, মনগড়া গল্প ও জাল হাদিসের অতিরঞ্জন বর্জন করে কোরআন ও সহিহ হাদিসভিত্তিক ভারসাম্যপূর্ণ আলোচনার ধারা তৈরি করা।</p>
+            </div>
+            <div class="pillar-card">
+                <h3><i class="fas fa-comments"></i> কোমল ভাষায় আদেশ-নিষেধ</h3>
+                <p>জীবনের সকল ক্ষেত্রে শরিয়তের পথ প্রদর্শন করা। কর্কশতা পরিহার করে নরম, সহানুভূতিশীল ও হিতকামী আচরণের মাধ্যমে মানুষকে দ্বীনের পথে ডাকা।</p>
+            </div>
+            <div class="pillar-card">
+                <h3><i class="fas fa-hands-helping"></i> অসহায় ও শিক্ষার্থীদের সেবা</h3>
+                <p>অভাবী মানুষ এবং দ্বীনি জ্ঞান অন্বেষণকারীদের (তালেবুল এলম) পাশে দাঁড়ানো। জ্ঞানচর্চা কেবল কিতাবে সীমাবদ্ধ না রেখে সমাজের কল্যাণে প্রসারিত করা।</p>
+            </div>
+        </div>
+
+        <h2>আমাদের বৈশিষ্ট্য</h2>
+        <p>আমরা দৃঢ়ভাবে বিশ্বাস করি যে, ওয়াজকারীর কথা ও কাজের মিল থাকা আবশ্যক; কারণ ওয়াজকারীর বাস্তব জীবনই তার সবচেয়ে বড় দলিল। বর্তমান যুগের ওয়াজ-নছিহতের ব্যবসায়িক মানসিকতা, অসংলগ্নতা এবং ত্রুটিসমূহ পরিহার করে প্রকৃত নায়েবে রাসূলের সুমহান আদর্শে সমাজ গড়ে তোলাই আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ-এর মূল মিশন।</p>
+
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> হোমে ফিরে যান</a>
+    </div>
+
+</body>
+</html>
