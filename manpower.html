@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>জনশক্তি - আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind_Siliguri:wght@400;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-purple: #3b0066;
+            --mid-purple: #6a0dad;
+            --light-purple: #f4ecf7;
+            --dark-green: #0f4c1d;
+            --mid-green: #1e7e34;
+            --light-green: #ebf7ee;
+            --accent-gold: #ffd700;
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Tiro Bangla', serif;
+        }
+
+        body {
+            background-color: var(--light-green);
+            color: var(--text-dark);
+            line-height: 1.7;
+            padding: 40px 5%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 45px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--mid-purple);
+        }
+
+        h1.page-title {
+            text-align: center;
+            color: var(--dark-purple);
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        h1.page-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--mid-purple), var(--mid-green));
+            margin: 10px auto 0;
+            border-radius: 10px;
+        }
+
+        .layer-title {
+            color: var(--dark-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--light-purple);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .layer-title i {
+            color: var(--mid-purple);
+        }
+
+        /* --- স্তর ১: কার্যনির্বাহী পরিষদ টেবিল স্টাইল --- */
+        .committee-table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .committee-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .committee-table th, .committee-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .committee-table th {
+            background-color: var(--dark-purple);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .committee-table tr:nth-child(even) {
+            background-color: var(--light-purple);
+        }
+
+        .committee-table tr:hover {
+            background-color: #f1e6f9;
+        }
+
+        .status-badge {
+            background-color: #f39c12;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* --- স্তর ২ ও ৩: গ্রিড ও কার্ড স্টাইল --- */
+        .member-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .member-card {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            border-left: 4px solid var(--mid-green);
+        }
+
+        .member-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+            border-left-color: var(--mid-purple);
+        }
+
+        .member-info h3 {
+            color: var(--dark-purple);
+            font-size: 1.35rem;
+            margin-bottom: 6px;
+        }
+
+        .member-info p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .member-info p strong {
+            color: var(--dark-green);
+        }
+
+        .btn-details {
+            background-color: var(--light-purple);
+            color: var(--mid-purple);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            width: max-content;
+        }
+
+        .btn-details:hover {
+            background-color: var(--mid-purple);
+            color: var(--white);
+        }
+
+        /* --- পপ-আপ (Modal) স্টাইল --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background: var(--white);
+            width: 90%;
+            max-width: 550px;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            position: relative;
+            transform: scale(0.8);
+            transition: var(--transition);
+            border-top: 6px solid var(--mid-green);
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: #999;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            color: #d63031;
+        }
+
+        .modal-body {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .modal-body img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--light-purple);
+            margin-bottom: 15px;
+        }
+
+        .modal-body h2 {
+            color: var(--dark-purple);
+            margin-bottom: 5px;
+            font-size: 1.6rem;
+        }
+
+        .modal-body .modal-designation {
+            color: var(--mid-green);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .modal-bio-table {
+            width: 100%;
+            text-align: left;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .modal-bio-table td {
+            padding: 8px 5px;
+            font-size: 1.05rem;
+            vertical-align: top;
+        }
+
+        .modal-bio-table td:first-child {
+            font-weight: 600;
+            color: #666;
+            width: 30%;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: var(--mid-purple);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+        }
+
+        .back-btn:hover {
+            background: var(--dark-purple);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 20px 3%; }
+            .container { padding: 25px 15px; }
+            h1.page-title { font-size: 2rem; }
+            .layer-title { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">আমাদের জনশক্তি</h1>
+
+        <h2 class="layer-title"><i class="fas fa-sitemap"></i> কার্যনির্বাহী পরিষদ</h2>
+        <div class="committee-table-wrapper">
+            <table class="committee-table">
+                <thead>
+                    <tr>
+                        <th>ক্রমিক</th>
+                        <th>সাংগঠনিক পদবি</th>
+                        <th>দায়িত্বপ্রাপ্ত ব্যক্তির নাম</th>
+                        <th>অবস্থা</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>০১</td>
+                        <td><strong>প্রধান উপদেষ্টা</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০২</td>
+                        <td><strong>চেয়ারম্যান</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৩</td>
+                        <td><strong>কো-চেয়ারম্যান</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৪</td>
+                        <td><strong>মহাসচিব (সেক্রেটারি জেনারেল)</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৫</td>
+                        <td><strong>যুগ্ম মহাসচিব</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৬</td>
+                        <td><strong>সাংগঠনিক সম্পাদক</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৭</td>
+                        <td><strong>অর্থ ও তহবিল সম্পাদক</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৮</td>
+                        <td><strong>গবেষণা ও প্রকাশনা সম্পাদক</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>০৯</td>
+                        <td><strong>প্রচার ও মিডিয়া সম্পাদক</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                    <tr>
+                        <td>১০</td>
+                        <td><strong>দপ্তর সম্পাদক</strong></td>
+                        <td>[নাম বসবে]</td>
+                        <td><span class="status-badge">খালি</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <h2 class="layer-title"><i class="fas fa-user-shield"></i> সম্মানিত সদস্যবৃন্দ</h2>
+        <div class="member-grid">
+            
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>মাওলানা আবদুর রহমান</h3>
+                    <p><strong>যোগ্যতা:</strong> এম.এ (কামিল), খতিব ও গবেষক</p>
+                </div>
+                <button class="btn-details" onclick="openModal('মাওলানা আবদুর রহমান', 'সম্মানিত সদস্য', 'এম.এ (কামিল), ফিকহ ও হাদিস গবেষক', 'ঢাকা', '০১৭xxxxxxxx', 'কোরআন ও সুন্নাহর আলোকে সমাজ সংস্কার এবং সহিহ আকিদা প্রসারে তিনি বিগত ১০ বছর ধরে কাজ করছেন।', 'default-avatar.png')">
+                    বিস্তারিত জানুন <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>মুফতি মাহমুদুল হাসান</h3>
+                    <p><strong>যোগ্যতা:</strong> ইফতা (দারুল উলুম), মুহাদ্দিস</p>
+                </div>
+                <button class="btn-details" onclick="openModal('মুফতি মাহমুদুল হাসান', 'সম্মানিত সদস্য', 'ইফতা (দারুল উলুম), ইসলামি আইন বিশেষজ্ঞ', 'চট্টগ্রাম', '০১৮xxxxxxxx', 'তিনি দেশের একটি শীর্ষস্থানীয় মাদরাসায় হাদিসের অধ্যাপনা করছেন এবং আঞ্জুমানের ফতোয়া বোর্ডের দায়িত্বে আছেন।', 'default-avatar.png')">
+                    বিস্তারিত জানুন <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+        <h2 class="layer-title"><i class="fas fa-user-clock"></i> সদস্যপদ প্রার্থী</h2>
+        <div class="member-grid">
+            
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>হাফেজ মাওলানা ওবায়দুল্লাহ</h3>
+                    <p><strong>যোগ্যতা:</strong> দাওরায়ে হাদিস (মাওলানা)</p>
+                </div>
+                <button class="btn-details" onclick="openModal('হাফেজ মাওলানা ওবায়দুল্লাহ', 'সদস্যপদ প্রার্থী', 'দাওরায়ে হাদিস, ক্বারী', 'বরিশাল', '০১৫xxxxxxxx', 'আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ-এর আদর্শে অনুপ্রাণিত হয়ে তিনি কেন্দ্রীয় দাঈ হিসেবে যুক্ত হতে আবেদন করেছেন।', 'default-avatar.png')">
+                    বিস্তারিত জানুন <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <div class="member-card">
+                <div class="member-info">
+                    <h3>মাওলানা নূর হোসাইন</h3>
+                    <p><strong>যোগ্যতা:</strong> কামিল (হাদিস বিভাগ)</p>
+                </div>
+                <button class="btn-details" onclick="openModal('মাওলানা নূর হোসাইন', 'সদস্যপদ প্রার্থী', 'কামিল (হাদিস), খতিব', 'খুলনা', '১৯xxxxxxxx', 'তিনি একজন তরুণ সুবক্তা এবং মাঠপর্যায়ে দাওয়াতী কার্যক্রম সম্প্রসারণে আগ্রহী প্রার্থী।', 'default-avatar.png')">
+                    বিস্তারিত জানুন <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> হোমে ফিরে যান</a>
+    </div>
+
+
+    <div class="modal-overlay" id="detailsModal" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImg" src="default-avatar.png" alt="সদস্যের ছবি">
+                <h2 id="modalName">নাম এখানে</h2>
+                <div class="modal-designation" id="modalLayer">স্তর এখানে</div>
+                
+                <table class="modal-bio-table">
+                    <tr>
+                        <td>যোগ্যতা:</td>
+                        <td id="modalQualification">তথ্য নেই</td>
+                    </tr>
+                    <tr>
+                        <td>অঞ্চল/জেলা:</td>
+                        <td id="modalArea">তথ্য নেই</td>
+                    </tr>
+                    <tr>
+                        <td>যোগাযোগ:</td>
+                        <td id="modalContact">তথ্য নেই</td>
+                    </tr>
+                    <tr>
+                        <td>পরিচিতি:</td>
+                        <td id="modalBio" style="text-align: justify;">তথ্য নেই</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const modal = document.getElementById('detailsModal');
+
+        // পপ-আপ খোলার ফাংশন (এতে ডায়নামিক ডাটা পাস হবে)
+        function openModal(name, layer, qualification, area, contact, bio, imgUrl) {
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalLayer').innerText = layer;
+            document.getElementById('modalQualification').innerText = qualification;
+            document.getElementById('modalArea').innerText = area;
+            document.getElementById('modalContact').innerText = contact;
+            document.getElementById('modalBio').innerText = bio;
+            document.getElementById('modalImg').src = imgUrl || 'default-avatar.png';
+            
+            modal.classList.add('active');
+        }
+
+        // পপ-আপ বন্ধ করার ফাংশন
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        // পপ-আপের বাইরে ক্লিক করলে বন্ধ হওয়ার ফাংশন
+        function closeModalOutside(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
