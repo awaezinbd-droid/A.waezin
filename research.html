@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>গবেষণা ও প্রকাশনা - আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind_Siliguri:wght@400;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --dark-purple: #3b0066;
+            --mid-purple: #6a0dad;
+            --light-purple: #f4ecf7;
+            --dark-green: #0f4c1d;
+            --mid-green: #1e7e34;
+            --light-green: #ebf7ee;
+            --accent-gold: #ffd700;
+            --text-dark: #2d2d2d;
+            --white: #ffffff;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', 'Tiro Bangla', serif;
+        }
+
+        body {
+            background-color: var(--light-green);
+            color: var(--text-dark);
+            line-height: 1.8;
+            padding: 40px 5%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 45px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 6px solid var(--mid-purple);
+        }
+
+        h1.page-title {
+            text-align: center;
+            color: var(--dark-purple);
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+
+        h1.page-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--mid-purple), var(--mid-green));
+            margin: 10px auto 0;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            color: var(--dark-green);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 50px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--light-purple);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title i {
+            color: var(--mid-purple);
+        }
+
+        /* --- আমাদের প্রকাশনা (Book Cards) --- */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .book-card {
+            background: var(--white);
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .book-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+            border-color: var(--mid-purple);
+        }
+
+        .book-icon {
+            font-size: 3.5rem;
+            color: var(--mid-purple);
+            background: var(--light-purple);
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            height: 90px;
+        }
+
+        .book-info h3 {
+            color: var(--dark-purple);
+            font-size: 1.25rem;
+            margin-bottom: 5px;
+        }
+
+        .book-info p {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .book-link {
+            color: var(--mid-green);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .book-link:hover {
+            color: var(--dark-green);
+            text-decoration: underline;
+        }
+
+        /* --- লিখিত বক্তব্য সমূহ (Articles List) --- */
+        .articles-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .article-item {
+            background: #fdfbfd;
+            border-left: 4px solid var(--mid-purple);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            transition: var(--transition);
+        }
+
+        .article-item:hover {
+            background: var(--light-purple);
+            transform: translateX(5px);
+        }
+
+        .article-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .article-link:hover {
+            color: var(--dark-purple);
+        }
+
+        .article-link i {
+            font-size: 1rem;
+            color: var(--mid-purple);
+        }
+
+        /* --- লাইব্রেরী টেবিল (Library Table) --- */
+        .library-table-wrapper {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+        }
+
+        .library-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        .library-table th, .library-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: left;
+        }
+
+        .library-table th {
+            background-color: var(--dark-green);
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .library-table tr:nth-child(even) {
+            background-color: var(--light-green);
+        }
+
+        .library-table tr:hover {
+            background-color: #e2f2e6;
+        }
+
+        .pdf-btn {
+            background-color: #e74c3c;
+            color: var(--white);
+            text-decoration: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .pdf-btn:hover {
+            background-color: #c0392b;
+            box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            padding: 12px 28px;
+            background: var(--mid-purple);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+        }
+
+        .back-btn:hover {
+            background: var(--dark-purple);
+            transform: translateX(-5px);
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 20px 3%; }
+            .container { padding: 25px 15px; }
+            h1.page-title { font-size: 2rem; }
+            .section-title { font-size: 1.4rem; }
+            .book-card { flex-direction: column; text-align: center; }
+            .book-icon { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="page-title">গবেষণা ও প্রকাশনা</h1>
+
+        <h2 class="section-title"><i class="fas fa-book"></i> আমাদের প্রকাশনা</h2>
+        <div class="publications-grid">
+            
+            <div class="book-card">
+                <div class="book-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="book-info">
+                    <h3>ওয়াজ শিক্ষা (প্রথম ভাগ)</h3>
+                    <p>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ কর্তৃক সংকলিত ও প্রকাশিত গবেষণা গ্রন্থ।</p>
+                    <a href="https://example.com/buy-book1" target="_blank" class="book-link">
+                        সংগ্রহ করুন <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div class="book-info">
+                    <h3>আলেমে রব্বানীর সুমহান আদর্শ</h3>
+                    <p>প্রকৃত নায়েবে রাসূলের দায়িত্ব ও গুণাবলী নিয়ে বিশেষ প্রকাশনা।</p>
+                    <a href="https://example.com/buy-book2" target="_blank" class="book-link">
+                        সংগ্রহ করুন <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+
+        <h2 class="section-title"><i class="fas fa-file-alt"></i> লিখিত বক্তব্য সমূহ</h2>
+        <ul class="articles-list">
+            
+            <li class="article-item">
+                <a href="article1.html" class="article-link">
+                    <span>১. কওলোল-জমিল ও শেফায়োল আলিল-এর আলোকে আলেমে রব্বানীর সংজ্ঞা</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+
+            <li class="article-item">
+                <a href="article2.html" class="article-link">
+                    <span>২. বর্তমান ওয়াজ-নছিহতের ত্রুটিসমূহ এবং শরয়ী সমাধান</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+
+            <li class="article-item">
+                <a href="article3.html" class="article-link">
+                    <span>৩. দাওয়াহ ইলাল্লাহর ক্ষেত্রে কোমল ভাষা ব্যবহারের গুরুত্ব ও প্রয়োজনীয়তা</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </li>
+
+        </ul>
+
+
+        <h2 class="section-title"><i class="fas fa-archive"></i> লাইব্রেরী</h2>
+        <div class="library-table-wrapper">
+            <table class="library-table">
+                <thead>
+                    <tr>
+                        <th>বইয়ের নাম</th>
+                        <th>লেখকের নাম</th>
+                        <th>ডাউনলোড (PDF)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><strong>আল-কওলোল জমিল</strong></td>
+                        <td>মাওলানা শাহ ওলিউল্লাহ দেহলবি (রহঃ)</td>
+                        <td><a href="https://example.com/pdf/qaulal-jamil.pdf" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>শেফায়োল আলিল</strong></td>
+                        <td>[অনুবাদক/ব্যাখ্যাকারক]</td>
+                        <td><a href="https://example.com/pdf/shifaul-alil.pdf" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
+                    </tr>
+
+                    <tr>
+                        <td><strong>ফাতাওয়া শামী)</strong></td>
+                        <td>ই্মাম )</td>
+                        <td><a href="#" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> হোমে ফিরে যান</a>
+    </div>
+
+</body>
+</html>
