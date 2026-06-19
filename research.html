@@ -63,21 +63,74 @@
             border-radius: 10px;
         }
 
+        /* --- Search Box Styling --- */
+        .search-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+            max-width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px 10px 40px;
+            font-size: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--mid-purple);
+            box-shadow: 0 0 8px rgba(106, 13, 173, 0.15);
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-purple);
+            padding-bottom: 12px;
+        }
+
         .section-title {
             color: var(--dark-green);
             font-size: 1.8rem;
             font-weight: 700;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid var(--light-purple);
-            padding-bottom: 8px;
             display: flex;
             align-items: center;
             gap: 12px;
+            border: none;
+            margin: 0;
+            padding: 0;
         }
 
         .section-title i {
             color: var(--mid-purple);
+        }
+
+        /* --- নো রেজাল্ট মেসেজ স্টাইল --- */
+        .no-result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 1.1rem;
+            background: #fafafa;
+            border-radius: 8px;
+            border: 1px dashed #ccc;
         }
 
         /* --- আমাদের প্রকাশনা (Book Cards) --- */
@@ -85,7 +138,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
-            margin-bottom: 20px;
         }
 
         .book-card {
@@ -98,6 +150,10 @@
             align-items: center;
             transition: var(--transition);
             box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .book-card.hidden {
+            display: none !important;
         }
 
         .book-card:hover {
@@ -163,6 +219,10 @@
             transition: var(--transition);
         }
 
+        .article-item.hidden {
+            display: none !important;
+        }
+
         .article-item:hover {
             background: var(--light-purple);
             transform: translateX(5px);
@@ -192,7 +252,6 @@
             overflow-x: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            margin-bottom: 20px;
         }
 
         .library-table {
@@ -211,6 +270,10 @@
             background-color: var(--dark-green);
             color: var(--white);
             font-weight: 700;
+        }
+
+        .library-table tr.hidden {
+            display: none !important;
         }
 
         .library-table tr:nth-child(even) {
@@ -266,6 +329,8 @@
             .container { padding: 25px 15px; }
             h1.page-title { font-size: 2rem; }
             .section-title { font-size: 1.4rem; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .search-wrapper { max-width: 100%; width: 100%; }
             .book-card { flex-direction: column; text-align: center; }
             .book-icon { width: 100%; }
         }
@@ -276,66 +341,75 @@
     <div class="container">
         <h1 class="page-title">গবেষণা ও প্রকাশনা</h1>
 
-        <h2 class="section-title"><i class="fas fa-book"></i> আমাদের প্রকাশনা</h2>
-        <div class="publications-grid">
-            
+        <div class="section-header">
+            <h2 class="section-title"><i class="fas fa-book"></i> আমাদের প্রকাশনা</h2>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchPublications" class="search-input" placeholder="প্রকাশিত বই খুঁজুন...">
+            </div>
+        </div>
+
+        <div class="publications-grid" id="publicationsGrid">
             <div class="book-card">
-                <div class="book-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
+                <div class="book-icon"><i class="fas fa-book-open"></i></div>
                 <div class="book-info">
                     <h3>ওয়াজ শিক্ষা (প্রথম ভাগ)</h3>
-                    <p>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ কর্তৃক সংকলিত ও প্রকাশিত গবেষণা গ্রন্থ।</p>
-                    <a href="https://example.com/buy-book1" target="_blank" class="book-link">
-                        সংগ্রহ করুন <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <p>আঞ্জুমানে ওয়ায়েজিন বাংলাদেশ কর্তৃক সংকলিত ও প্রকাশিত গবেষণা ग्रंथ।</p>
+                    <a href="#" target="_blank" class="book-link">সংগ্রহ করুন <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
             <div class="book-card">
-                <div class="book-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
+                <div class="book-icon"><i class="fas fa-book-open"></i></div>
                 <div class="book-info">
                     <h3>আলেমে রব্বানীর সুমহান আদর্শ</h3>
                     <p>প্রকৃত নায়েবে রাসূলের দায়িত্ব ও গুণাবলী নিয়ে বিশেষ প্রকাশনা।</p>
-                    <a href="https://example.com/buy-book2" target="_blank" class="book-link">
-                        সংগ্রহ করুন <i class="fas fa-external-link-alt"></i>
-                    </a>
+                    <a href="#" target="_blank" class="book-link">সংগ্রহ করুন <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
+        </div>
+        <div id="noPubs" class="no-result">আপনার অনুসন্ধানকৃত বইটি পাওয়া যায়নি!</div>
 
+
+        <div class="section-header">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> লিখিত বক্তব্য সমূহ</h2>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchArticles" class="search-input" placeholder="আর্টিকেল বা বক্তব্য খুঁজুন...">
+            </div>
         </div>
 
-
-        <h2 class="section-title"><i class="fas fa-file-alt"></i> লিখিত বক্তব্য সমূহ</h2>
-        <ul class="articles-list">
-            
+        <ul class="articles-list" id="articlesList">
             <li class="article-item">
                 <a href="article1.html" class="article-link">
                     <span>১. কওলোল-জমিল ও শেফায়োল আলিল-এর আলোকে আলেমে রব্বানীর সংজ্ঞা</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
             </li>
-
             <li class="article-item">
                 <a href="article2.html" class="article-link">
                     <span>২. বর্তমান ওয়াজ-নছিহতের ত্রুটিসমূহ এবং শরয়ী সমাধান</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
             </li>
-
             <li class="article-item">
                 <a href="article3.html" class="article-link">
                     <span>৩. দাওয়াহ ইলাল্লাহর ক্ষেত্রে কোমল ভাষা ব্যবহারের গুরুত্ব ও প্রয়োজনীয়তা</span>
                     <i class="fas fa-chevron-right"></i>
                 </a>
             </li>
-
         </ul>
+        <div id="noArticles" class="no-result">আপনার অনুসন্ধানকৃত আর্টিকেলটি পাওয়া যায়নি!</div>
 
 
-        <h2 class="section-title"><i class="fas fa-archive"></i> লাইব্রেরী</h2>
+        <div class="section-header">
+            <h2 class="section-title"><i class="fas fa-archive"></i> লাইব্রেরী</h2>
+            <div class="search-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchLibrary" class="search-input" placeholder="বই বা লেখকের নাম দিয়ে খুঁজুন...">
+            </div>
+        </div>
+
         <div class="library-table-wrapper">
             <table class="library-table">
                 <thead>
@@ -345,32 +419,89 @@
                         <th>ডাউনলোড (PDF)</th>
                     </tr>
                 </thead>
-                <tbody>
-                    
+                <tbody id="libraryTableBody">
                     <tr>
                         <td><strong>আল-কওলোল জমিল</strong></td>
                         <td>মাওলানা শাহ ওলিউল্লাহ দেহলবি (রহঃ)</td>
-                        <td><a href="https://example.com/pdf/qaulal-jamil.pdf" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
+                        <td><a href="#" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
                     </tr>
-
                     <tr>
                         <td><strong>শেফায়োল আলিল</strong></td>
                         <td>[অনুবাদক/ব্যাখ্যাকারক]</td>
-                        <td><a href="https://example.com/pdf/shifaul-alil.pdf" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
+                        <td><a href="#" target="_blank" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
                     </tr>
-
                     <tr>
-                        <td><strong>ফাতাওয়া শামী)</strong></td>
-                        <td>ই্মাম )</td>
+                        <td><strong>ফাতাওয়া ইবনে তাইমিয়াহ (১ম খণ্ড)</strong></td>
+                        <td>ইмам ইবনে তাইমিয়াহ (রহঃ)</td>
                         <td><a href="#" class="pdf-btn"><i class="fas fa-file-pdf"></i> ডাউনলোড</a></td>
                     </tr>
-
                 </tbody>
             </table>
         </div>
+        <div id="noLibrary" class="no-result" style="margin-top: 15px;">লাইব্রেরীতে এই নামের কোনো বই বা লেখক পাওয়া যায়নি!</div>
 
         <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> হোমে ফিরে যান</a>
     </div>
+
+
+    <script>
+        // ১. আমাদের প্রকাশনা সার্চ ফিল্টার
+        document.getElementById('searchPublications').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let cards = document.querySelectorAll('#publicationsGrid .book-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let text = card.querySelector('.book-info').innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('noPubs').style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+
+        // ২. লিখিত বক্তব্য (আর্টিকেল) সার্চ ফিল্টার
+        document.getElementById('searchArticles').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll('#articlesList .article-item');
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                let text = item.querySelector('.article-link').innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    item.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('noArticles').style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+
+        // ৩. লাইব্রেরী টেবিল সার্চ ফিল্টার (বই এবং লেখক উভয় ফিল্ড সার্চ করবে)
+        document.getElementById('searchLibrary').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let rows = document.querySelectorAll('#libraryTableBody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                let text = row.innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    row.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    row.classList.add('hidden');
+                }
+            });
+
+            document.getElementById('noLibrary').style.display = visibleCount === 0 ? 'block' : 'none';
+        });
+    </script>
 
 </body>
 </html>
